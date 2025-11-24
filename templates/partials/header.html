@@ -9,7 +9,7 @@
     <ul class="flex space-x-4">
       {% for item in config.extra.menu %}
         <li>
-          <a href="{{ item.url }}"
+          <a href="{{ get_url(path=item.url) }}"
              class="no-underline text-current hover:bg-transparent">
             {{ item.name }}
           </a>
