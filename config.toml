@@ -1,0 +1,27 @@
+base_url = "https://example.com"
+title = "Modus Theme for Zola"
+description = "An opinionated Zola theme using the colour palette of the Modus themes"
+
+compile_sass = true
+minify_html = false
+build_search_index = false
+
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+
+[extra]
+author = "Your Name"
+greeting = "Welcome!"
+copyright = "&copy; 2025"
+
+[[extra.menu]]
+name = "Blog"
+url = "/blog"
+
+[[extra.menu]]
+name = "About"
+url = "/about"

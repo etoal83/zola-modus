@@ -1,0 +1,7 @@
+<div class="border-t border-operandi-gray dark:border-vivendi-gray py-2 text-sm text-operandi-black-dim dark:text-vivendi-white-dim">
+  {% if config.extra.copyright %}
+    {{ config.extra.copyright | safe }}
+  {% else %}
+    &copy; {{ now() | date(format="%Y") }}
+  {% endif %}
+</div>

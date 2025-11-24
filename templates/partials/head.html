@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+{% if page %}
+  <title>{{ page.title }} - {{ config.title }}</title>
+  {% if page.description %}
+    <meta name="description" content="{{ page.description | truncate(length=160) }}" />
+  {% elif page.summary %}
+    <meta name="description" content="{{ page.summary | truncate(length=160) }}" />
+  {% endif %}
+{% elif section %}
+  <title>{{ section.title | default(value=config.title) }} - {{ config.title }}</title>
+  {% if section.description %}
+    <meta name="description" content="{{ section.description }}" />
+  {% endif %}
+{% else %}
+  <title>{{ config.title }}</title>
+  {% if config.description %}
+    <meta name="description" content="{{ config.description }}" />
+  {% endif %}
+{% endif %}
+
+{% if current_url %}
+<link rel="canonical" href="{{ current_url }}">
+{% endif %}
+
+<link rel="stylesheet" href="{{ get_url(path='css/dist/main.css') }}">
+
+<!-- Modus Chroma syntax highlighting -->
+<link rel="stylesheet" href="{{ get_url(path='css/dist/operandi-chroma-style.css') }}" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="{{ get_url(path='css/dist/vivendi-chroma-style.css') }}" media="(prefers-color-scheme: dark)">
+
+{% if config.generate_feeds %}
+  <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+{% endif %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <header>
+    <h1>{{ section.title }}</h1>
+    {% if section.description %}
+      <p>{{ section.description | markdown | safe }}</p>
+    {% endif %}
+  </header>
+
+  {% include "partials/page-list.html" %}
+{% endblock %}

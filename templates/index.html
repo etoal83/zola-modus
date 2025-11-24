@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ config.extra.greeting | default(value="Welcome!") }}</h1>
+  {% if config.description %}
+    <p>{{ config.description | markdown | safe }}</p>
+  {% endif %}
+
+  {% set section = get_section(path="_index.md") %}
+  <h2>Recent Posts</h2>
+  {% include "partials/page-list.html" %}
+{% endblock %}
