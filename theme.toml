@@ -3,7 +3,7 @@ description = "An opinionated Zola theme using the colour palette of the Modus t
 license = "MIT"
 homepage = "https://github.com/etoal83/zola-modus"
 min_version = "0.18.0"
-demo = ""
+demo = "https://etoal83.github.io/zola-modus"
 
 [extra]
 # Theme-specific configuration that can be overridden in config.toml

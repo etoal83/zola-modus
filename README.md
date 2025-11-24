@@ -17,7 +17,7 @@ This is a port of the [hugo-modus](https://github.com/goofansu/hugo-modus) theme
 
 ## Demo
 
-- (coming soon)
+- [Live Demo](https://etoal83.github.io/zola-modus)
 
 ## Installation
 
